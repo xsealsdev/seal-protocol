@@ -72,7 +72,7 @@ node --test test/indexer.test.js
 
 | Path | |
 |---|---|
-| [`docs/protocol.md`](docs/protocol.md) | CRC-20 as it runs on mainnet (reverse-engineered from live transactions), SEAL v1 (mint, transfer, covenant, draw), the `crc-21` collection deploy |
+| [`docs/protocol.md`](docs/protocol.md) | The SEAL v1 spec: covenant, fair draw, mint, transfer, the `crc-21` collection deploy, and CRC-20 as it runs on mainnet |
 | [`src/engine.js`](src/engine.js) | The generator: 1,500 seals, 69 traits, 8 one-of-ones, deterministic |
 | [`tools/build-inscription.js`](tools/build-inscription.js) | Builds the exact page inscribed on Bitcoin |
 | [`indexer/`](indexer) | The SEAL v1 indexer: replays every mint and transfer to compute ownership |
