@@ -1,6 +1,6 @@
 // Builds the ⌈seal⌉ generator as one standalone HTML file, ready to inscribe on Bitcoin.
 // The page renders any seal from its id (#42 or ?id=42), animated like the site, with no network access.
-// It is the collection's parent inscription: its reveal tx must also carry the crc-21 deploy OP_RETURN (see README).
+// It is the collection's parent inscription: its reveal tx also carries the crc-21 deploy OP_RETURN (docs/protocol.md).
 // Usage: node tools/build-inscription.js inscription
 const fs=require('fs'),path=require('path'),crypto=require('crypto'),zlib=require('zlib');
 const OUT=process.argv[2];if(!OUT)throw 'usage: node tools/build-inscription.js <outdir>';

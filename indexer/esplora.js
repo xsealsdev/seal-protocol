@@ -1,6 +1,6 @@
-// Esplora (mempool.space, blockstream.info) client: what the indexer reads and what the transaction flows need.
+// Esplora (blockstream.info, mempool.space or your own) client: the chain data the indexer reads.
 // Throttled, retries on 429 and network errors. Several servers can be given (comma separated): when one limits us
-// or does not answer, the next one takes over. Broadcasting is never retried blindly.
+// or does not answer, the next one takes over.
 function esplora(bases, { concurrency = 4, timeout = 15000 } = {}) {
   const list = String(bases).split(',').map(b => b.trim().replace(/\/$/, '')).filter(Boolean);
   let cur = 0; // the server in use; moves on when it limits us

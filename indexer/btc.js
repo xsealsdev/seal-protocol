@@ -92,14 +92,14 @@ const LEAF_VERSION = 0xc0;
 
 const tapLeafHash = script => taggedHash('TapLeaf', Buffer.concat([Buffer.from([LEAF_VERSION]), compactSize(script.length), script]));
 
-// P2TR output for an internal key and a single-leaf script tree.
-// the Taproot output key of a wallet key used on its own (key path, no script tree), as bc1p wallets do
+// The Taproot output key of a wallet key used on its own (key path, no script tree), as bc1p wallets do
 function keyPathOutput(internalKeyHex, network = 'mainnet') {
   const pk = Buffer.from(internalKeyHex, 'hex'), t = toBig(taggedHash('TapTweak', pk));
   if (t >= N) throw new Error('bad tweak');
   const Q = add(liftX(toBig(pk)), mul(t)), outputKey = big32(Q[0]);
   return { outputKey: hex(outputKey), scriptPubKey: '5120' + hex(outputKey), address: segwitEncode(NETWORKS[network].hrp, 1, outputKey) };
 }
+// P2TR output for an internal key and a single-leaf script tree
 function taprootSingleLeaf(internalKeyHex, script, network = 'mainnet') {
   const pk = Buffer.from(internalKeyHex, 'hex'), leaf = tapLeafHash(script);
   const t = toBig(taggedHash('TapTweak', Buffer.concat([pk, leaf])));

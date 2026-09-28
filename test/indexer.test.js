@@ -57,7 +57,7 @@ async function expectedDraw(c, txid, n, taken, supply = 1500, skip = []) {
   return out;
 }
 
-test('draw rule: fixed vector (docs/crc20-protocol.md)', () => {
+test('draw rule: fixed vector (docs/protocol.md)', () => {
   assert.strictEqual(drawIndex('0'.repeat(64), '1'.repeat(64), 0, 1500), 771);
   assert.strictEqual(drawIndex('0'.repeat(64), '1'.repeat(64), 1, 1499), 347);
 });

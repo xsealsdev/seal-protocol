@@ -1,5 +1,5 @@
 // ⌈seal⌉ indexer: follows the chain through an Esplora API and computes who owns each seal.
-// Rules (docs/crc20-protocol.md, "SEAL v1"):
+// Rules (docs/protocol.md, "SEAL v1"):
 //  - mint: a tx that spends an output of the mint authority address and carries {"p":"crc-20","op":"mint","tick":"SEAL","n":N}.
 //    Outputs marker + 1 … marker + N each receive a seal; which one is drawn from the confirming block:
 //    k-th draw = SHA256("<block hash>:<txid>:<k>") mod (number of ids not minted yet), taken from those ids in ascending order.
