@@ -1,0 +1,11 @@
+{
+  "name": "seal-protocol",
+  "private": true,
+  "description": "SEAL v1: 1,500 pixel seals on Bitcoin L1. Spec, on-chain generator and open indexer.",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "test": "node --test test/indexer.test.js",
+    "owners": "node tools/owners.js",
+    "build-inscription": "node tools/build-inscription.js inscription"
+  }
+}
